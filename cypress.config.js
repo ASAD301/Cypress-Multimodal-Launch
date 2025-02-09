@@ -1,11 +1,15 @@
 const { defineConfig } = require("cypress");
 module.exports = defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
 
-  requestTimeout: 30000,
+  requestTimeout: 6000,
+  
+  retries: {
+    runMode: 1,
+    //openMode: 0,
+    },
 
-env:{
-
-},
+env:{},
 
   e2e: {
     setupNodeEvents(on, config) {

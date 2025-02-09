@@ -1,4 +1,5 @@
 {
-    "userPhoneNumber": "01000000000",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTNiNDQ3ZGJjODJkNDEzMWY5NjkzMiIsInBob25lIjoiMDE1MDAwMDAwMDAiLCJsb2dpblR5cGUiOiJQSE9ORSIsImRldmljZVR5cGUiOiJXRUIiLCJpYXQiOjE3Mzg2NjA4NjMsImV4cCI6MTczODcyNDQwMH0.AjgYiNq766d3g62Z_-Rbyllc4M0qchIe94kZM2XllSs"
+    "userPhoneNumber":"01620000000",
+    "userMail":"abc@gmail.com",
+    "userPassword":" " 
 }
