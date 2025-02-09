@@ -14,6 +14,13 @@ class TicketPurchase{
         cy.get(this.companyName).each(($element , list , $index)=>{
             const name = $element.text();
             cy.log(name);
+            if(name.includes(this.companyName)){
+                cy.get(this.tripId).each(($element, list , index)=>{
+                    const idTrip = $element.text();
+                    cy.log(idTrip)
+                })
+
+            }
             // if(name){
                 
             // }
