@@ -12,8 +12,7 @@ class HomePage{
     }
     searchFromCity(){
         cy.get(this.fromCityInputfield).click();
-        cy.wait(3000);
-        cy.get(this.searchFromDestination).type("Dha");
+        cy.get(this.searchFromDestination, {timeout: 10000 }).type("Dha");
         cy.get(this.location).each(($el, index , $list)=>{
            const text = $el.text();
             if(text.includes("Dhaka")){
@@ -24,7 +23,7 @@ class HomePage{
 
     searchToCity(){
         cy.wait(3000);
-        cy.get(this.toLocation).type("Bari");
+        cy.get(this.toLocation, {timeout: 10000 }).type("Bari");
         cy.get(this.location).each(($el, index , $list)=>{
            const text = $el.text();
             if(text.includes("Barishal")){
@@ -36,13 +35,17 @@ class HomePage{
 
     selectDate(){
         cy.get(this.datefield).click();
-        cy.get(this.monthWithYear).should('be.visible')
-        cy.get(this.monthWithYear).click();
-        cy.get("div[aria-label='Monday 24 Feb 2025']").click();
-        cy.contains("button", "Search").click();
-        
+        // cy.get(this.monthWithYear).should('be.visible')
+        // cy.get(this.monthWithYear).click();
+        cy.get("div[aria-label='Thursday 13 Feb 2025']").click();
     }
 
+    serchtrip(){
+        cy.contains("button", "Search").click({force:true});
+        cy.get(".truncate h4").contains("Launches").click();
+        cy.scrollTo(0, 500);
+    }
+    
     
 }
 
