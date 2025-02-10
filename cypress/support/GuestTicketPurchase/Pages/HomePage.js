@@ -43,7 +43,8 @@ class HomePage{
     serchtrip(){
         cy.contains("button", "Search").click({force:true});
         cy.get(".truncate h4").contains("Launches").click();
-        cy.scrollTo(0, 500);
+        const currentURL = cy.url()
+        
     }
     
     

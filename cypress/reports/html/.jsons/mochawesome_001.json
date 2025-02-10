@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-02-10T10:21:22.529Z",
+    "end": "2025-02-10T10:21:41.867Z",
+    "duration": 19338,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b361636d-5197-4cb3-9608-1eac041e7ed6",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\Controller.js",
+      "file": "cypress\\integration\\examples\\Controller.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c74c486a-92bc-4907-b7f9-51346c347fd6",
+          "title": "Guest Ticket purchase Controller suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Guest ticket purchase: Trip Search ",
+              "fullTitle": "Guest Ticket purchase Controller suite Guest ticket purchase: Trip Search ",
+              "timedOut": null,
+              "duration": 8786,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.visit(\"https://dev-jatri.jatritech.com/\");\nconst homePage = new _HomePage.default();\nhomePage.searchFromCity();\nhomePage.searchToCity();\nhomePage.selectDate();\nhomePage.serchtrip();",
+              "err": {},
+              "uuid": "43676a3c-8237-4bd3-b473-ab363899b46b",
+              "parentUUID": "c74c486a-92bc-4907-b7f9-51346c347fd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Guest ticket purchase: Ticket Purchase",
+              "fullTitle": "Guest Ticket purchase Controller suite Guest ticket purchase: Ticket Purchase",
+              "timedOut": null,
+              "duration": 4453,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\Controller.js\\\\Guest Ticket purchase Controller suite -- Guest ticket purchase Ticket Purchase (failed).png\"\n    ],\n    [\n      \"\\\\Controller.js\\\\Guest Ticket purchase Controller suite -- Guest ticket purchase Ticket Purchase (failed) (attempt 2).png\"\n    ]\n  ]\n}",
+              "code": "//cy.visit(\"https://dev-jatri.jatritech.com/launch?from=673dac796f9d59f53663839a&to=673dac796f9d59f5366383bc&date=2025-02-13&returnDate=&fromName=Dhaka&toName=Barishal&fromLat=23.810332&fromLong=90.4125181&toLat=22.7029212&toLong=90.3465971&adult=1&children=0&infant=0\")\nconst ticketPurchase = new _TicketPurchase.default();\nticketPurchase.tripSearch();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `div div h4[aria-expanded='false']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `div div h4[aria-expanded='false']`, but never found it.\n    at TicketPurchase.tripSearch (webpack://cypress-multimodal-launch/./cypress/support/GuestTicketPurchase/TicketPurchase.js:14:11)\n    at Context.eval (webpack://cypress-multimodal-launch/./cypress/integration/examples/Controller.js:26:23)",
+                "diff": null
+              },
+              "uuid": "f488da17-b87f-4a12-8fa1-0cb9fd78eac5",
+              "parentUUID": "c74c486a-92bc-4907-b7f9-51346c347fd6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "43676a3c-8237-4bd3-b473-ab363899b46b"
+          ],
+          "failures": [
+            "f488da17-b87f-4a12-8fa1-0cb9fd78eac5"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 13239,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
