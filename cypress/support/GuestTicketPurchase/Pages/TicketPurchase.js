@@ -2,31 +2,31 @@
 class TicketPurchase{
 
     constructor(){
-        this.companyName = "div div h4[aria-expanded='false']";
-        this.tripId = "div div .grid p span";
+        this.companyName = ".w-full h4[aria-expanded='false'] ";
+        this.tripTime = ".w-full .grid p span";
 
     }
-    tripSearch(){
-        const name = "nusrat shipping agency";
-        const desireTripTime = "Departs 08:00 pm";
-        //const shipName = cy.get(this.companyName).text()
-
+    tripSearch(companyName, desireTripTime){
+        
         cy.get(this.companyName).each(($element , list , $index)=>{
             const name = $element.text();
             cy.log(name);
-            if(name.includes(this.companyName)){
-                cy.get(this.tripId).each(($element, list , index)=>{
-                    const idTrip = $element.text();
-                    cy.log(idTrip)
-                })
-
+            if(name === companyName){
+                cy.get(".w-full .grid p span").each(($el, list, $index)=>{
+                    const departsTime = $el.text();
+                    cy.log(departsTime);
+                    if(departsTime === desireTripTime){
+                        cy.get(".w-full button").contains("Select Seats").click();
+                        
+                    }
+                }) 
+                return false;
             }
-            // if(name){
-                
-            // }
+
         })
-    
+
     }
+
 }
 
 export default TicketPurchase;

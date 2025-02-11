@@ -14,13 +14,17 @@ describe("Guest Ticket purchase Controller suite", function()
     it("Guest ticket purchase: Trip Search ", function(){
        // cy.visit("https://dev-jatri.jatritech.com/");
         const homePage= new HomePage();
-        homePage.searchFromCity();
-        homePage.searchToCity();
+        const searchCityFrom = "Dhaka";
+        const searchCityTo = "Barishal";
+        homePage.searchFromCity(searchCityFrom);
+        homePage.searchToCity(searchCityTo);
         homePage.selectDate(); 
         homePage.serchtrip();
 
         const ticketPurchase = new TicketPurchase();
-        ticketPurchase.tripSearch();
+        const companyName = "nusrat shipping agency";
+        const desireTripTime = "Departs 08:00 pm";
+        ticketPurchase.tripSearch(companyName, desireTripTime);
         
     })
     

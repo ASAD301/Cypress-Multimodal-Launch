@@ -1,0 +1,5 @@
+
+
+class BookingDetails{
+    cy.wait()
+}
