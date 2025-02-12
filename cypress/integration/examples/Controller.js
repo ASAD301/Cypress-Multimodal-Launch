@@ -3,6 +3,7 @@
 import HomePage from "../../support/GuestTicketPurchase/Pages/HomePage";
 import TripSearch from "../../support/GuestTicketPurchase/Pages/TripSearch";
 import SelectSeat from "../../support/GuestTicketPurchase/Pages/SelectSeat";
+import PaymentPage from "../../support/GuestTicketPurchase/Pages/Paymentpage";
 
 beforeEach(()=>{
     cy.visit("https://dev-jatri.jatritech.com/");
@@ -33,7 +34,11 @@ describe("Guest Ticket purchase Controller suite", function()
         selectSeat.ticketBookingWait();
         selectSeat.selectSingleSeat();
         selectSeat.passengerDetails(firstName , lastName , demoNumber);
+        selectSeat.continueButton();
         
+        const paymentPage = new PaymentPage();
+        paymentPage.payment();
+        paymentPage.paymentSuccess();
     })
     
 })

@@ -11,17 +11,18 @@ class SelectSeat{
         this.phoneNumber = "#mobile";
     }
     ticketBookingWait(){
-        cy.wait(5000);
+        cy.wait(2000);
     }
 
     selectSingleSeat() {
         // Get all seats
         cy.get(this.allSeats).each(($element, index) => {
             // Check if the seat is not disabled ( available for booking)
-            if (!$element.is(":disabled")) {
+            if (!$element.is(":disabled")){
                 // Click the first available seat
                 cy.wrap($element).click();  // Use `cy.wrap` to make the element a Cypress object
-                cy.log(`Clicked on seat ${index}`);  // Log which seat was clicked
+                cy.wait(2000);
+                cy.log(`Clicked on seat ${index}`);  // Log which seat was clicked  
                 return false;  // Exit the `.each()` loop after clicking once
             }
         });
@@ -33,8 +34,8 @@ class SelectSeat{
         cy.get(this.phoneNumber).type(demoNumber);
 
     }
-    continue(){
-        cy.contains("button", "Continue");
+    continueButton(){
+        cy.contains("button", "Continue").click();
     }
 
 
