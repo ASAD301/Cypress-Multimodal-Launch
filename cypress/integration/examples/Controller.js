@@ -20,7 +20,7 @@ describe("Guest Ticket purchase Controller suite", function()
         const datetrip = "13";
         homePage.searchFromCity(searchCityFrom);
         homePage.searchToCity(searchCityTo);
-        homePage.selectDate(datetrip); 
+        //homePage.selectDate(datetrip); 
         homePage.serchtrip();
 
         const tripSearch = new TripSearch();

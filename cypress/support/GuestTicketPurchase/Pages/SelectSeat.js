@@ -14,16 +14,22 @@ class SelectSeat{
         cy.wait(2000);
     }
 
-    selectSingleSeat() {
+    selectSingleSeat(nthSeat) {
+        let count = 0
         // Get all seats
-        cy.get(this.allSeats).each(($element, index) => {
+        cy.get(this.allSeats).each(($element, list, index) => {
             // Check if the seat is not disabled ( available for booking)
             if (!$element.is(":disabled")){
                 // Click the first available seat
-                cy.wrap($element).click();  // Use `cy.wrap` to make the element a Cypress object
-                cy.wait(2000);
-                cy.log(`Clicked on seat ${index}`);  // Log which seat was clicked  
-                return false;  // Exit the `.each()` loop after clicking once
+                count++;
+                console.log(count);
+                if(count === 3){
+                    cy.wrap($element).click();  // Use `cy.wrap` to make the element a Cypress object
+                    cy.wait(2000);
+                    cy.log(`Clicked on seat ${list}`);  // Log which seat was clicked  
+                    return false;  // Exit the `.each()` loop after clicking once
+                }
+                
             }
         });
     }

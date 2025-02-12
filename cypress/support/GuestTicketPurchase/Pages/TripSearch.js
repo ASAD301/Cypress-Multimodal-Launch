@@ -17,12 +17,13 @@ class TripSearch{
                     cy.log(departsTime);
                     cy.get(".w-full div button span").contains("Select Seats").click();
                     // if(departsTime === desireTripTime){
-                        
-                        
+                              
                     // }
+                    return false;
                 }) 
-                return false;
+                
             }
+            return false;
 
         })
 
