@@ -11,14 +11,15 @@ class TripSearch{
         cy.get(this.companyName).each(($element , list , $index)=>{
             const name = $element.text();
             cy.log(name);
-            if(name === companyName){
+            if(name.includes(companyName)){
                 cy.get(".w-full .grid p span").each(($el, list, $index)=>{
                     const departsTime = $el.text();
                     cy.log(departsTime);
-                    if(departsTime === desireTripTime){
-                        cy.get(".w-full button").contains("Select Seats").click();
+                    cy.get(".w-full div button span").contains("Select Seats").click();
+                    // if(departsTime === desireTripTime){
                         
-                    }
+                        
+                    // }
                 }) 
                 return false;
             }

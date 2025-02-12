@@ -27,19 +27,28 @@ class HomePage{
         cy.get(this.location).each(($el, index , $list)=>{
            const text = $el.text();
             if(text.includes(searchCityTo)){
-                cy.get($el).click();
+                cy.get($el).click({force:true});
                 return false;
             }
         })
     }
 
-    selectDate(){
+    selectDate(datetrip){
         cy.get(this.datefield).click();
-        cy.get("div[aria-label='Thursday 13 Feb 2025']").click();
+        //cy.get("div[aria-label='Thursday 13 Feb 2025']").click();
+        cy.get("div .vc-day-content").each(($element , list , $index)=>{
+            const text = $element.text();
+            cy.log(text);
+            if(text.includes(datetrip)){
+                cy.log($index);
+                $element.click();
+                return false;
+            }
+        })
     }
 
     serchtrip(){
-        cy.contains("button", "Search").click({force:true});
+        cy.contains("button", "Search").click();
         cy.get(".truncate h4").contains("Launches").click();
         //const currentURL = cy.url() 
     }

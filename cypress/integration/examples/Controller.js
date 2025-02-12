@@ -17,14 +17,15 @@ describe("Guest Ticket purchase Controller suite", function()
         const homePage= new HomePage();
         const searchCityFrom = "Dhaka";
         const searchCityTo = "Barishal";
+        const datetrip = "13";
         homePage.searchFromCity(searchCityFrom);
         homePage.searchToCity(searchCityTo);
-        homePage.selectDate(); 
+        homePage.selectDate(datetrip); 
         homePage.serchtrip();
 
         const tripSearch = new TripSearch();
         const companyName = "nusrat shipping agency";
-        const desireTripTime = "Departs 08:00 pm";
+        const desireTripTime = "08:00";
         tripSearch.tripSearch(companyName, desireTripTime);
 
         const selectSeat = new SelectSeat();
