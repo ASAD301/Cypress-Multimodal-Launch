@@ -2,7 +2,7 @@
 //const cypress = require("cypress");
 import HomePage from "../../support/GuestTicketPurchase/Pages/HomePage";
 import TripSearch from "../../support/GuestTicketPurchase/Pages/TripSearch";
-import SelectSeat from "../../support/GuestTicketPurchase/Pages/BookingDetails";
+import SelectSeat from "../../support/GuestTicketPurchase/Pages/SelectSeat";
 
 beforeEach(()=>{
     cy.visit("https://dev-jatri.jatritech.com/");
@@ -27,8 +27,12 @@ describe("Guest Ticket purchase Controller suite", function()
         tripSearch.tripSearch(companyName, desireTripTime);
 
         const selectSeat = new SelectSeat();
+        const firstName = "Single Seat";
+        const lastName = "selected";
+        const demoNumber = "01300000000";
         selectSeat.ticketBookingWait();
         selectSeat.selectSingleSeat();
+        selectSeat.passengerDetails(firstName , lastName , demoNumber);
         
     })
     

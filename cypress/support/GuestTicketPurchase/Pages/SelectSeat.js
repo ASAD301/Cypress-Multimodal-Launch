@@ -4,8 +4,11 @@ class SelectSeat{
 
     constructor(){
 
-        this.allSeats = ".place-content-center button"; // All seats selector
+        this.allSeats  = ".place-content-center button"; // All seats selector
         this.blockSeat = ".place-content-center button[disabled]";// Blocked (disabled) seats selector
+        this.firstName = "#firstName";
+        this.lastName  = "#lastName";
+        this.phoneNumber = "#mobile";
     }
     ticketBookingWait(){
         cy.wait(5000);
@@ -23,5 +26,17 @@ class SelectSeat{
             }
         });
     }
+
+    passengerDetails(firstName , lastName , demoNumber){
+        cy.get(this.firstName).type(firstName);
+        cy.get(this.lastName).type(lastName);
+        cy.get(this.phoneNumber).type(demoNumber);
+
+    }
+    continue(){
+        cy.contains("button", "Continue");
+    }
+
+
 }
 export default SelectSeat;
