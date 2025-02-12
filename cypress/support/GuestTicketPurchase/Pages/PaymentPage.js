@@ -5,8 +5,8 @@ class PaymentPage{
         this.sslCommerz = "button[value='SSLCOMMERZ']";
         this.bKash = "button[value='BKASH']";
         this.checkBox = "button[role='checkbox']";
-        this.paymentGetway = "ul li .ng-star-inserted";
-        this.getwayBkash= ".payment_token .tab-content ul li:visible";
+        this.paymentGetway = ".banking_tabs li";
+        this.getwayBkash= "#menu2 ul li";
         this.successBtn = "input[value='Success']";
     }
 
@@ -18,7 +18,7 @@ class PaymentPage{
     }
 
     paymentSuccess(){
-        cy.get(this.paymentGetway).contains("Mobile Banking ").click();
+        cy.get(this.paymentGetway).eq(1).click();
         cy.get(this.getwayBkash).first().click();
         cy.get(this.successBtn).click();
     }
