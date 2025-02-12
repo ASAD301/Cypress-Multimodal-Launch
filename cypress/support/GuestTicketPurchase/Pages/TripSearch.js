@@ -1,5 +1,5 @@
 //const cypress = require("cypress");
-class TicketPurchase{
+class TripSearch{
 
     constructor(){
         this.companyName = ".w-full h4[aria-expanded='false'] ";
@@ -29,4 +29,4 @@ class TicketPurchase{
 
 }
 
-export default TicketPurchase;
+export default TripSearch;

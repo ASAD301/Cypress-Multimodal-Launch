@@ -10,23 +10,23 @@ class HomePage{
         this.monthWithYear = ".vc-title";
     }
 
-    searchFromCity(cityName){
+    searchFromCity(searchCityFrom){
         cy.get(this.fromCityInputfield).click();
         cy.get(this.searchFromDestination, {timeout: 10000 }).type("Dha");
         cy.get(this.location).each(($el, index , $list)=>{
            const text = $el.text();
-            if(text.includes(cityName)){
+            if(text.includes(searchCityFrom)){
                 cy.get($el).click();
             }
         })
     }
 
-    searchToCity(cityName){
+    searchToCity(searchCityTo){
         cy.wait(3000);
         cy.get(this.toLocation, {timeout: 10000 }).type("Bari");
         cy.get(this.location).each(($el, index , $list)=>{
            const text = $el.text();
-            if(text.includes(cityName)){
+            if(text.includes(searchCityTo)){
                 cy.get($el).click();
                 return false;
             }
@@ -48,3 +48,5 @@ class HomePage{
 }
 
 export default HomePage;
+
+// blockSeat = button[disabled]
